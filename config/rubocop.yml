@@ -23,29 +23,54 @@ Layout/MultilineMethodCallIndentation:
 
 # Metrics
 Metrics/MethodLength:
-  Max: 20
+  Max: 25
+  CountAsOne: ['array', 'hash', 'heredoc']
   Exclude:
     - 'test/**/*'
 
 Metrics/BlockLength:
+  Max: 25
+  CountAsOne: ['array', 'hash', 'heredoc']
   Exclude:
     - 'test/**/*'
+    - 'spec/**/*'
     - 'Rakefile'
     - '*.gemspec'
+    - 'config/routes.rb'
+    - 'config/environments/*.rb'
 
 Metrics/ClassLength:
-  Max: 150
+  Max: 200
+  CountAsOne: ['array', 'hash', 'heredoc']
+
+Metrics/ModuleLength:
+  Max: 200
+  CountAsOne: ['array', 'hash', 'heredoc']
+
+Metrics/AbcSize:
+  Max: 20
+  CountRepeatedAttributes: false
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/PerceivedComplexity:
+  Max: 10
 
 # Style
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
 
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
 
 Style/Documentation:
-  Enabled: false
+  Enabled: true
+  Exclude:
+    - 'test/**/*'
+    - 'spec/**/*'
 
 Style/SymbolArray:
   EnforcedStyle: brackets
@@ -53,6 +78,44 @@ Style/SymbolArray:
 Style/WordArray:
   EnforcedStyle: brackets
 
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+  EnforcedShorthandSyntax: either
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/NumericPredicate:
+  EnforcedStyle: predicate
+
 # Naming
 Naming/VariableNumber:
+  EnforcedStyle: normalcase
+
+Naming/PredicatePrefix:
+  ForbiddenPrefixes:
+    - is_
+  AllowedMethods:
+    - is_a?
+
+# Lint
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'test/**/*'
+    - 'spec/**/*'
+
+Lint/MissingSuper:
   Enabled: false
+
+# Security
+Security/YAMLLoad:
+  Enabled: true
