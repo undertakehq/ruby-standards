@@ -28,9 +28,10 @@ Enhancements should:
 
 #### Prerequisites
 
-1. Fork the repository
-2. Clone your fork locally
-3. Install dependencies:
+1. Ensure you have **Ruby 3.4+** installed
+2. Fork the repository
+3. Clone your fork locally
+4. Install dependencies:
    ```bash
    bundle install
    ```

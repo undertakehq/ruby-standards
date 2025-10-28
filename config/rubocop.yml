@@ -1,0 +1,58 @@
+# RuboCop configuration for Undertake HQ Ruby projects
+# Projects can inherit from this configuration using:
+#
+# inherit_gem:
+#   undertakehq-ruby-standards: config/rubocop.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.4
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+
+# Layout
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns:
+    - '\A\s*#'  # Allow long comments
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+# Metrics
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - 'test/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*'
+    - 'Rakefile'
+    - '*.gemspec'
+
+Metrics/ClassLength:
+  Max: 150
+
+# Style
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
+# Naming
+Naming/VariableNumber:
+  Enabled: false

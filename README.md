@@ -26,7 +26,7 @@ gem install undertakehq-ruby-standards
 
 ## Ruby Version
 
-This gem requires **Ruby 2.7+** and has no framework dependencies (works with vanilla Ruby, Rails, or any other framework).
+This gem requires **Ruby 3.4+** and has no framework dependencies (works with vanilla Ruby, Rails, or any other framework).
 
 ## Usage
 
