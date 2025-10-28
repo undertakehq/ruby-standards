@@ -1,0 +1,10 @@
+# RuboCop configuration for this gem itself
+# This inherits from the config we provide to other projects
+
+inherit_from: config/rubocop.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'sig/**/*'
