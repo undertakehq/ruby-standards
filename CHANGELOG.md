@@ -16,3 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - RuboCop configuration for Ruby projects (targeting Ruby 3.4)
 - Minitest helper configuration
 - Base module structure
+- Comprehensive RuboCop configuration
+- Custom cop framework with AvoidSleep example
+- Enhanced Minitest assertions and base test class
+- Configuration system with auto-load support
