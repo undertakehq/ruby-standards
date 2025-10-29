@@ -30,15 +30,22 @@ module Undertakehq
       attr_accessor :strict_mode
 
       def initialize
-        @auto_load_minitest = false
-        @auto_load_rubocop = false
-        @strict_mode = false
+        set_defaults
       end
 
       # Reset configuration to default values
       #
       # @return [void]
       def reset!
+        set_defaults
+      end
+
+      private
+
+      # Set configuration default values
+      #
+      # @return [void]
+      def set_defaults
         @auto_load_minitest = false
         @auto_load_rubocop = false
         @strict_mode = false

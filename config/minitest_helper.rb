@@ -52,7 +52,10 @@ module Undertakehq
       # @param to [Object, nil] the expected final value
       # @yield the block that should cause the change
       # @return [void]
+      # @raise [ArgumentError] if no block is provided
       def assert_changes(object, method, by: nil, from: nil, to: nil)
+        raise ArgumentError, "A block must be provided to assert_changes" unless block_given?
+
         initial_value = object.public_send(method)
 
         assert_equal from, initial_value, "Expected initial value to be #{from}, got #{initial_value}" if from
@@ -75,7 +78,10 @@ module Undertakehq
       # @param method [Symbol] the method to call on the object
       # @yield the block that should not cause a change
       # @return [void]
+      # @raise [ArgumentError] if no block is provided
       def assert_no_changes(object, method)
+        raise ArgumentError, "A block must be provided to assert_no_changes" unless block_given?
+
         initial_value = object.public_send(method)
 
         yield
