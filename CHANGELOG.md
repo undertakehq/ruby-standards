@@ -20,3 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Custom cop framework with AvoidSleep example
 - Enhanced Minitest assertions and base test class
 - Configuration system with auto-load support
+- Added rubocop-minitest extension for improved Minitest linting
+- Added rubocop-rake extension for Rake task linting
+- Configured specialized Minitest cops with sensible defaults
+- Configured Rake cops for better task definition standards
+
+### Improved
+
+- Enhanced `Undertakehq/AvoidSleep` cop to detect all sleep call variants:
+  - Now catches `sleep()`, `Kernel.sleep()`, and `::Kernel.sleep()`
+  - Comprehensive test suite covering all sleep variants and edge cases

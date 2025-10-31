@@ -36,6 +36,8 @@ Gem::Specification.new do |spec|
   # Runtime dependencies
   spec.add_dependency "minitest", "~> 5.26"
   spec.add_dependency "rubocop", ">= 1.81", "< 2.0"
+  spec.add_dependency "rubocop-minitest", ">= 0.38.2", "< 1.0"
+  spec.add_dependency "rubocop-rake", ">= 0.7.1", "< 1.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html

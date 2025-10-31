@@ -24,9 +24,10 @@ module Undertakehq
 
       def test_configuration_defaults
         config = ::Undertakehq::RubyStandards.config
-        assert_equal false, config.auto_load_minitest
-        assert_equal false, config.auto_load_rubocop
-        assert_equal false, config.strict_mode
+
+        refute config.auto_load_minitest
+        refute config.auto_load_rubocop
+        refute config.strict_mode
       end
 
       def test_can_configure
@@ -34,7 +35,7 @@ module Undertakehq
           config.auto_load_minitest = true
         end
 
-        assert_equal true, ::Undertakehq::RubyStandards.config.auto_load_minitest
+        assert ::Undertakehq::RubyStandards.config.auto_load_minitest
       end
 
       def test_can_reset_configuration
@@ -44,7 +45,7 @@ module Undertakehq
 
         ::Undertakehq::RubyStandards.reset_configuration!
 
-        assert_equal false, ::Undertakehq::RubyStandards.config.strict_mode
+        refute ::Undertakehq::RubyStandards.config.strict_mode
       end
     end
   end

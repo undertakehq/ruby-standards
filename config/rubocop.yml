@@ -4,6 +4,10 @@
 # inherit_gem:
 #   undertakehq-ruby-standards: config/rubocop.yml
 
+plugins:
+  - rubocop-minitest
+  - rubocop-rake
+
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.4
@@ -118,4 +122,81 @@ Lint/MissingSuper:
 
 # Security
 Security/YAMLLoad:
+  Enabled: true
+
+# Minitest (rubocop-minitest)
+Minitest/AssertEmpty:
+  Enabled: true
+
+Minitest/AssertEqual:
+  Enabled: true
+
+Minitest/AssertInDelta:
+  Enabled: true
+
+Minitest/AssertIncludes:
+  Enabled: true
+
+Minitest/AssertInstanceOf:
+  Enabled: true
+
+Minitest/AssertMatch:
+  Enabled: true
+
+Minitest/AssertNil:
+  Enabled: true
+
+Minitest/AssertRespondTo:
+  Enabled: true
+
+Minitest/AssertSame:
+  Enabled: true
+
+Minitest/AssertTruthy:
+  Enabled: true
+
+Minitest/EmptyLineBeforeAssertionMethods:
+  Enabled: true
+
+Minitest/LiteralAsActualArgument:
+  Enabled: true
+
+Minitest/RefuteEmpty:
+  Enabled: true
+
+Minitest/RefuteEqual:
+  Enabled: true
+
+Minitest/RefuteFalse:
+  Enabled: true
+
+Minitest/RefuteInDelta:
+  Enabled: true
+
+Minitest/RefuteIncludes:
+  Enabled: true
+
+Minitest/RefuteInstanceOf:
+  Enabled: true
+
+Minitest/RefuteMatch:
+  Enabled: true
+
+Minitest/RefuteNil:
+  Enabled: true
+
+Minitest/RefuteRespondTo:
+  Enabled: true
+
+Minitest/RefuteSame:
+  Enabled: true
+
+Minitest/UnspecifiedException:
+  Enabled: true
+
+# Rake (rubocop-rake)
+Rake/Desc:
+  Enabled: true
+
+Rake/DuplicateTask:
   Enabled: true
