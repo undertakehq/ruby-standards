@@ -15,6 +15,8 @@ module RuboCop
       #   # bad
       #   sleep(5)
       #   sleep 5
+      #   Kernel.sleep(5)
+      #   ::Kernel.sleep(5)
       #
       #   # good
       #   # Use a background job scheduler
@@ -28,11 +30,16 @@ module RuboCop
 
         # @!method sleep_call?(node)
         def_node_matcher :sleep_call?, <<~PATTERN
-          (send nil? :sleep ...)
+          (send {nil? (const nil? :Kernel)} :sleep ...)
+        PATTERN
+
+        # @!method kernel_sleep_call?(node)
+        def_node_matcher :kernel_sleep_call?, <<~PATTERN
+          (send (const {nil? cbase (const nil? :Kernel)} :Kernel) :sleep ...)
         PATTERN
 
         def on_send(node)
-          return unless sleep_call?(node)
+          return unless sleep_call?(node) || kernel_sleep_call?(node)
 
           add_offense(node)
         end
